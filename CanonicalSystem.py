@@ -31,8 +31,8 @@ class CanonicalSystem:
         assert mov_type in [ "rhythmic", "discrete" ]
         self.mov_type = mov_type
 
-        # for rhythmic movement just saving the value as None
-        self.alpha_s  = kwargs.get( 'alpha_s', 1.0 ) if self.mov_type == "discrete" else None
+        # for rhythmic movement just saving the value as -1, where -1 means it is NOT a discrete movement.
+        self.alpha_s  = kwargs.get( 'alpha_s', 1.0 ) if self.mov_type == "discrete" else -1
         self.tau      = kwargs.get( 'tau'    , 1.0 )
 
         # Initialization
